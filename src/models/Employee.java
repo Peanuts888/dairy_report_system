@@ -33,6 +33,7 @@ import javax.persistence.Table;
 @Entity
 public class Employee {
     @Id
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "code", nullable = false, unique = true)
