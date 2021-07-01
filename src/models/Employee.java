@@ -36,14 +36,21 @@ public class Employee {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(name = "code", nullable = false, unique = true)
     private String code;
+
     private String name;
+
     @Column(name = "password", length = 64, nullable = false)
     private String password;
+
     private Integer admin_flag;
+
     private Timestamp created_at;
+
     private Timestamp updated_at;
+
     private Integer delete_flag;
 
     public Integer getId() {

@@ -3,6 +3,7 @@ package models;
 import java.sql.Date;
 import java.sql.Timestamp;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -48,6 +49,11 @@ public class Report {
     private String content;
     private Timestamp created_at;
     private Timestamp updated_at;
+    @Column(name = "time_in", length = 50)
+    private String time_in;
+
+    @Column(name = "time_out", length = 50)
+    private String time_out;
 
     public Integer getId() {
         return id;
@@ -92,5 +98,16 @@ public class Report {
         this.updated_at = updated_at;
     }
 
-
+    public String getTime_in() {
+        return time_in;
+    }
+    public void setTime_in(String time_in) {
+        this.time_in = time_in;
+    }
+    public String getTime_out() {
+        return time_out;
+    }
+    public void setTime_out(String time_out) {
+        this.time_out = time_out;
+    }
 }

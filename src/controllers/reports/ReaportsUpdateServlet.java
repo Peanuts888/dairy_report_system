@@ -46,6 +46,9 @@ public class ReaportsUpdateServlet extends HttpServlet {
             r.setContent(request.getParameter("content"));
             r.setUpdated_at(new Timestamp(System.currentTimeMillis()));
 
+            r.setTime_in(request.getParameter("time_in"));
+            r.setTime_out(request.getParameter("time_out"));
+
             List<String> errors = ReportValidator.validate(r);
             if(errors.size() > 0) {
                 em.close();
